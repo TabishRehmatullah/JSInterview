@@ -239,4 +239,20 @@ var addSix = createBase(6)(21);
 
     }
     console.log(threeSum(3)(4)(10));
+
+
+// A simple example of Polymorphism (Method overloading)
+
+function adding( a , b){
+    return a + b;
+}
+
+function adding(a,b,c){
+    return a + b + c;
+}
+
+function adding(a,b,c,d){
+    return a + b + c + d;
+}
    
+console.log("Adding 4 numbers: " + adding(6,5,7,10))
