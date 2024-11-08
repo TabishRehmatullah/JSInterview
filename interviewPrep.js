@@ -256,3 +256,187 @@ function adding(a,b,c,d){
 }
    
 console.log("Adding 4 numbers: " + adding(6,5,7,10))
+
+
+//Some interview Coding questions from js
+
+//Sort names into houses based on their name length
+let students = ["Ali", "Asadullah", "Kashif", "Taimoor", "Ubaidullah", "Raheel", "Zahid Ahmed", "Muhammad Ahmed", "Khizar", "kaif", "Sahil"]
+
+
+
+let houses = []
+
+for (const student of students) {
+    if(student.length < 6){
+        houses.push("Gryffindor")
+    }
+    else if(student.length < 8){
+        houses.push("Hufflepuff")
+    }
+    else if(student.length < 12){
+        houses.push("Ravenclaw")
+    }
+    else{
+        houses.push("Slytherin")
+    }
+}
+
+console.log(houses)
+
+//count the number of occurance of a letter in a word
+let alpha= prompt("Enter the letter you want to count")
+let exampleString = prompt("Enter String");
+function countAlpha(str) {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i].toLowerCase() === alpha.toLowerCase()) {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+
+let result = countAlpha(exampleString);
+console.log(`The letter ${alpha} occurs in ${exampleString}  ${result} times.`);
+
+
+//Reverse of a string
+
+function reverseString(str) {
+    let reversedStr = [];
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversedStr.push(str[i]);
+    }
+    return reversedStr.join("");
+   
+}
+
+
+let exampleString = "Hello, World!";
+let reversed = reverseString(exampleString);
+console.log(reversed);  
+
+
+//Check if the word is palindrome
+
+function isPalindrome(str) {
+    str = str.toLowerCase();
+    let reversedStr = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversedStr += str[i];
+    }
+    return str === reversedStr;
+}
+let exampleString = "madame";
+let result = isPalindrome(exampleString);
+console.log(result); 
+
+
+
+//find the factorial of a number
+function factorial(num) {
+    let result = 1;
+    for (let i = 2; i <= num; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+console.log(factorial(6)); 
+
+
+//sum of numbers of an array
+function sumArray(arr) {
+    let sum = 0;
+    
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    
+    return sum;
+}
+
+
+console.log(sumArray([1, 2, 3, 4]));  
+
+
+
+
+
+// adding two arrays
+function addArrays(arr1, arr2) {
+    let resultArray = [];
+
+    for (let i = 0; i < arr1.length; i++) {
+        resultArray[i] = arr1[i] + arr2[i];
+    }
+
+    return resultArray;
+}
+
+let array1 = [1, 2, 5, 4, 3, 9];
+let array2 = [5, 0, 3, 1, 7,4];
+
+let addedArray = addArrays(array1, array2);
+
+console.log(addedArray);  
+
+
+
+//check if the number is prime
+function isPrime(num) {
+    if (num < 2) return false;
+    
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+console.log(isPrime(2));  
+console.log(isPrime(10)); 
+
+
+//count the number of vowels in a string
+function countVowels(str) {
+    let vowels = "aeiouAEIOU";
+    let vowelCount = 0;
+    
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < vowels.length; j++) {
+            if (str[i] === vowels[j]) {
+                vowelCount++;
+                break;
+            }
+        }
+    }
+    
+    return vowelCount;
+}
+
+console.log(countVowels("hello")); 
+console.log(countVowels("javascript"));  
+
+
+
+//find the longest word in a string
+function findLongestWord(str) {
+    let words = str.split(' ');
+    let longestWord = '';
+
+    for (let word of words) {
+        if (word.length > longestWord.length) {
+            longestWord = word;
+        }
+    }
+    return longestWord;
+}
+console.log(findLongestWord("My name is Tabishhhhh"));
+
+
